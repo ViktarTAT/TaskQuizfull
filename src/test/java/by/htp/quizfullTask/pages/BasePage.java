@@ -1,6 +1,12 @@
 package by.htp.quizfullTask.pages;
 
+import org.openqa.selenium.WebDriver;
+
 public abstract class BasePage {
 
-    protected WebDriver driver; 
+    protected WebDriver driver;
+    
+    public BasePage(WebDriver driver){
+	this.driver = driver;
+    }
 }

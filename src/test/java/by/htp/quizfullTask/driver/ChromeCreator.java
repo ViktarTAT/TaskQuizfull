@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class ChromeCreator implements WebDriverCreator {
     
-    public static final String PATH_TO_DRIVER = "resources/";
+    public static final String PATH_TO_DRIVER = "resources/chromedriver.exe";
 
     @Override
     public WebDriver createDriver() {
@@ -23,7 +23,6 @@ public class ChromeCreator implements WebDriverCreator {
         }
 	driver = new ChromeDriver(service);
 	return driver;
-	
     }
 
 }

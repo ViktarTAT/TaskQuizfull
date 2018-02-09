@@ -30,5 +30,16 @@ public class RegistrationPage extends BasePage {
     public RegistrationPage(WebDriver driver) {
 	super(driver);
     }
+    
+    public void createNewAcount(Account account){
+	inputLogin.sendKeys(login);
+	inputPassword.sendKeys(pass);
+	inputRepassword.sendKeys(repass);
+	inputEmail.sendKeys(email);
+	if(corporate)
+	    checkboxCorporate.click();
+	inputCaptcha.click();
+	buttonOk.click();
+    }
 
 }

@@ -6,15 +6,17 @@ public class DriverFactory {
 
     public WebDriver createDriver(String nameDriverString) {
 	WebDriver driver = null;
-	WebDriverCreator creator;
+	WebDriverCreator creator = null;
 	ListNameDriver nameDriver;
 	nameDriver = ListNameDriver.getNameDriver(nameDriverString);
 
 	switch (nameDriver) {
 	case CHROME:
-	    driver = new ChromeCreator().createDriver();
+	    creator = new ChromeCreator();
 	    break;
 	}
+	
+	driver = creator.createDriver();
 
 	return driver;
     }

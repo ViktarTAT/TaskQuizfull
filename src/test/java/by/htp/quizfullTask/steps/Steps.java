@@ -21,13 +21,11 @@ public class Steps {
 
     public void openHomePage() {
 	HomePage page = new HomePage(driver);
-	page.openPage();
 	logger.info("open: Home page " + driver.getCurrentUrl());
     }
     
     public void openRegistrationPage() {
-	HomePage page = new HomePage(driver);
-	page.openRegistrationPage();
+	RegistrationPage page = new RegistrationPage(driver);
 	logger.info("open: Registration page " + driver.getCurrentUrl());
     }
     

@@ -33,6 +33,8 @@ public class RegistrationPage extends BasePage {
     public RegistrationPage(WebDriver driver) {
 	super(driver);
 	PageFactory.initElements(this.driver, this);
+	HomePage page = new HomePage(driver);
+	page.openRegistrationPage();
     }
 
     public void createNewAcount(Account account) {

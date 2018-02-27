@@ -15,9 +15,6 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
 	super(driver);
 	PageFactory.initElements(this.driver, this);
-    }
-
-    public void openPage() {
 	driver.get(BASE_URL);
     }
 

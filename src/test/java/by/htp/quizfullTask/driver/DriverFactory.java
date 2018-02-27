@@ -7,12 +7,17 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class DriverFactory {
-    
-    //TODO singleTon
+
     private static WebDriver driver;
     private static final Logger logger = LogManager.getRootLogger();
 
-    public static WebDriver createDriver(String nameDriverString) {
+    public static WebDriver getInstance(String nameDriverString) {
+	if (driver == null)
+	    createDriver(nameDriverString);
+	return driver;
+    }
+
+    public static void createDriver(String nameDriverString) {
 	logger.info("start: 'createDriver'");
 	WebDriverCreator creator = null;
 	ListNameDriver nameDriver;
@@ -28,9 +33,8 @@ public class DriverFactory {
 	driver = creator.createDriver();
 	initBrowser();
 	logger.info("finish: 'createDriver'");
-	return driver;
     }
-    
+
     public static void close() {
 	driver.close();
 	driver = null;

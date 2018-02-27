@@ -24,8 +24,6 @@ public class QuizfullTest {
     @Test
     public void oneCanCreateAccount() {
 	logger.info("start: 'oneCanCreateAccount'");
-	steps.openHomePage();
-	steps.openRegistrationPage();
 	Account account = new Account("asdf2", "1", "1", "asdf2@mail.ru", true); 
 	logger.info(account);
 	steps.createNewAccount(account);

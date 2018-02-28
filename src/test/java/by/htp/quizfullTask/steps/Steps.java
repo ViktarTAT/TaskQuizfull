@@ -19,8 +19,11 @@ public class Steps {
 	LOG.info("finish: 'startBrowser'");
     }
 
-    public void createNewAccount(Account account) {
+    public boolean createNewAccount(Account account) {
 	RegistrationPage page = new RegistrationPage(driver);
 	page.createNewAcount(account);
+	return page.isResult();
     }
+    
+    
 }

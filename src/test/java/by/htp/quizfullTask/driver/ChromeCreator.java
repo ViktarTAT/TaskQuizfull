@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class ChromeCreator implements WebDriverCreator {
     
-    public static final String PATH_TO_DRIVER = "src/test/resources/chromedriver.exe";
+    public static final String PATH_TO_DRIVER = "C:/driver/chromedriver.exe";
 
     @Override
     public WebDriver createDriver() {

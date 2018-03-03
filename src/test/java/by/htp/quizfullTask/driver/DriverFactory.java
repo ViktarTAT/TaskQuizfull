@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class DriverFactory {
 
     private static WebDriver driver;
-    private static final Logger logger = LogManager.getRootLogger();
+    private static final Logger LOG = LogManager.getRootLogger();
 
     public static WebDriver getInstance(String nameDriverString) {
 	if (driver == null)
@@ -18,7 +18,7 @@ public class DriverFactory {
     }
 
     public static void createDriver(String nameDriverString) {
-	logger.info("start: 'createDriver'");
+	LOG.info("start: 'createDriver'");
 	WebDriverCreator creator = null;
 	ListNameDriver nameDriver;
 	nameDriver = ListNameDriver.getNameDriver(nameDriverString);
@@ -26,13 +26,13 @@ public class DriverFactory {
 	switch (nameDriver) {
 	case CHROME:
 	    creator = new ChromeCreator();
-	    logger.info("creator: 'ChromeCreator'");
+	    LOG.info("creator: 'ChromeCreator'");
 	    break;
 	}
 
 	driver = creator.createDriver();
 	initBrowser();
-	logger.info("finish: 'createDriver'");
+	LOG.info("finish: 'createDriver'");
     }
 
     public static void close() {

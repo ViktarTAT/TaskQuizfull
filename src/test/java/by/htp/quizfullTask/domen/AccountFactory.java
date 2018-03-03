@@ -15,12 +15,26 @@ public class AccountFactory {
        return account;
    }
    
-   public Account getLoginMinSize(){
-       account.setLogin("asd");
+   public Account getAccountEmailFirstSymbolSpace(){
+       String email = account.getEmail();
+       email = " " + email;
+       account.setEmail(email);
        return account;
    }
    
-   public Account getLoginMaxSize(){
+   public Account getAccountLoginFirstSymbolSpace(){
+       String login = account.getLogin();
+       login = " " + login;
+       account.setLogin(login);
+       return account;
+   }
+   
+   public Account getAccountLoginMinSize(){
+       account.setLogin("alu");
+       return account;
+   }
+   
+   public Account getAccountLoginMaxSize(){
        account.setLogin("asdfasdfasdfasd");
        return account;
    }

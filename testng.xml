@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task quizful.net">
+	<groups>
+	<!-- positive, login, email -->
+		<run>
+			<include name="positive"/>
+		</run>
+	</groups>
+</suite>

@@ -34,8 +34,7 @@ public class RegistrationPage extends BasePage {
 	driver.findElement(INPUT_EMAIL).sendKeys(account.getEmail());
 	if (account.isCorporate())
 	    driver.findElement(CHECKBOX_CORPORATE).click();
-
-	driver.findElement(INPUT_CAPTCHA).click();
+	//driver.findElement(INPUT_CAPTCHA).click();
 	driver.findElement(BUTTON_OK).click();
     }
 

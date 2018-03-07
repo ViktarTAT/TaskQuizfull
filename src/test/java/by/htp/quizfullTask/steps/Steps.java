@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 
 import by.htp.quizfullTask.domen.Account;
 import by.htp.quizfullTask.driver.DriverFactory;
-import by.htp.quizfullTask.pages.HomePage;
 import by.htp.quizfullTask.pages.RegistrationPage;
 
 public class Steps {
@@ -20,8 +19,10 @@ public class Steps {
     }
 
     public boolean createNewAccount(Account account) {
+	LOG.info("start: 'createNewAccount'");
 	RegistrationPage page = new RegistrationPage(driver);
 	page.createNewAcount(account);
+	LOG.info("finish: 'createNewAccount'");
 	return page.isResult();
     }
     

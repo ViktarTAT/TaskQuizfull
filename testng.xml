@@ -3,8 +3,9 @@
 <suite name="Task quizful.net">
 	<test name="test">
 		<groups>
+		<!-- positive, negative, email, password -->
 			<run>
-				<include name="test"/>
+				<include name="password"/>
 			</run>
 		</groups>
 		<classes>

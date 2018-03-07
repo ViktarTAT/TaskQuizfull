@@ -32,42 +32,44 @@ public class QuizfullTest {
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccountEmailWithSpace() {
-	test("start: 'oneCanCreateAccountEmailWithSpace", factory.getAccountEmailWithSpace());
+	test("start: 'oneCanCreateAccountEmailWithSpace", 
+		factory.getAccountEmailWithSpace());
     }
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccountEmailFirstSymbolSpace() {
-	test("oneCanCreateAccountEmailFirstSymbolSpace", factory.getAccountEmailFirstSymbolSpace());
+	test("oneCanCreateAccountEmailFirstSymbolSpace", 
+		factory.getAccountEmailFirstSymbolSpace());
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginMinSize() {
-	test("oneCanCreateAccountLoginMinSize", factory.getAccountLoginMinSize());
+	test("oneCanCreateAccountLoginMinSize", 
+		factory.getAccountLoginMinSize());
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginMaxSize() {
-	test("oneCanCreateAccountLoginMaxSize", factory.getAccountLoginMaxSize());
+	test("oneCanCreateAccountLoginMaxSize", 
+		factory.getAccountLoginMaxSize());
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginFirstSymbolSpace() {
-	test("oneCanCreateAccountLoginFirstSymbolSpace", factory.getAccountLoginFirstSymbolSpace());
+	test("oneCanCreateAccountLoginFirstSymbolSpace", 
+		factory.getAccountLoginFirstSymbolSpace());
     }
 
     @Test(groups = { "negative", "password" })
     public void oneCanCreateAccountWithautPass() {
-	test("oneCanCreateAccountWithautPass", factory.getAcc);
+	test("oneCanCreateAccountWithautPass", 
+		factory.getAccountWithoutPass());
     }
 
-    @Test(groups = { "test" })
-    public void testTESTtest() {
-	test("testTESTtest", factory.getAccountLoginMaxSize());
-    }
-
-    @Test(groups = { "test" })
-    public void testTESTtest2() {
-	test("testTESTtest2", factory.getAccountLoginMoreMaxSize());
+    @Test(groups = { "negative", "password" })
+    public void oneCanCreateAccountWithautRepass() {
+	test("oneCanCreateAccountWithautRepass", 
+		factory.getAccountWithoutRepass());
     }
 
     private void test(String text, Account account) {

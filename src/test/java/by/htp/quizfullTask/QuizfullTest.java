@@ -27,79 +27,44 @@ public class QuizfullTest {
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccount() {
-	LOG.info("start: 'oneCanCreateAccount'");
-	Account account = factory.getAccount();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccount'");
-	assertTrue(result);
+	test("oneCanCreateAccount", factory.getAccount());
     }
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccountEmailWithSpace() {
-	LOG.info("start: 'oneCanCreateAccountEmailWithSpace'");
-	Account account = factory.getAccountEmailWithSpace();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccountEmailWithSpace'");
-	assertTrue(result);
+	test("start: 'oneCanCreateAccountEmailWithSpace", factory.getAccountEmailWithSpace());
     }
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccountEmailFirstSymbolSpace() {
-	LOG.info("start: 'oneCanCreateAccountEmailFirstSymbolSpace'");
-	Account account = factory.getAccountEmailFirstSymbolSpace();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccountEmailFirstSymbolSpace'");
-	assertTrue(result);
+	test("oneCanCreateAccountEmailFirstSymbolSpace", factory.getAccountEmailFirstSymbolSpace());
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginMinSize() {
-	LOG.info("start: 'oneCanCreateAccountLoginMinSize'");
-	Account account = factory.getAccountLoginMinSize();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccountLoginMinSize'");
-	assertTrue(result);
+	test("oneCanCreateAccountLoginMinSize", factory.getAccountLoginMinSize());
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginMaxSize() {
-	LOG.info("start: 'oneCanCreateAccountLoginMaxSize'");
-	Account account = factory.getAccountLoginMaxSize();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccountLoginMaxSize'");
-	assertTrue(result);
+	test("oneCanCreateAccountLoginMaxSize", factory.getAccountLoginMaxSize());
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginFirstSymbolSpace() {
-	LOG.info("start: 'oneCanCreateAccountLoginFirstSymbolSpace'");
-	Account account = factory.getAccountLoginFirstSymbolSpace();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccountLoginFirstSymbolSpace'");
-	assertTrue(result);
+	test("oneCanCreateAccountLoginFirstSymbolSpace", factory.getAccountLoginFirstSymbolSpace());
     }
 
     @Test(groups = { "negative", "password" })
     public void oneCanCreateAccountWithautPass() {
-	LOG.info("start: 'oneCanCreateAccountLoginFirstSymbolSpace'");
-	Account account = factory.getAccountLoginFirstSymbolSpace();
-	LOG.info(account);
-	boolean result = steps.createNewAccount(account);
-	LOG.info("finish: 'oneCanCreateAccountLoginFirstSymbolSpace'");
-	assertTrue(result);
+	test("oneCanCreateAccountWithautPass", factory.getAcc);
     }
 
     @Test(groups = { "test" })
     public void testTESTtest() {
 	test("testTESTtest", factory.getAccountLoginMaxSize());
     }
-    
+
     @Test(groups = { "test" })
     public void testTESTtest2() {
 	test("testTESTtest2", factory.getAccountLoginMoreMaxSize());

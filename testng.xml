@@ -5,7 +5,7 @@
 		<groups>
 		<!-- positive, negative, email, password -->
 			<run>
-				<include name="password"/>
+				
 			</run>
 		</groups>
 		<classes>

@@ -27,57 +27,57 @@ public class QuizfullTest {
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccount() {
-	test("oneCanCreateAccount", factory.getAccount());
+	assertTrue(test("oneCanCreateAccount", factory.getAccount()));
     }
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccountEmailWithSpace() {
-	test("start: 'oneCanCreateAccountEmailWithSpace", 
-		factory.getAccountEmailWithSpace());
+	assertTrue(test("start: 'oneCanCreateAccountEmailWithSpace", 
+		factory.getAccountEmailWithSpace()));
     }
 
     @Test(groups = { "positive", "email" })
     public void oneCanCreateAccountEmailFirstSymbolSpace() {
-	test("oneCanCreateAccountEmailFirstSymbolSpace", 
-		factory.getAccountEmailFirstSymbolSpace());
+	assertTrue(test("oneCanCreateAccountEmailFirstSymbolSpace", 
+		factory.getAccountEmailFirstSymbolSpace()));
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginMinSize() {
-	test("oneCanCreateAccountLoginMinSize", 
-		factory.getAccountLoginMinSize());
+	assertTrue(test("oneCanCreateAccountLoginMinSize", 
+		factory.getAccountLoginMinSize()));
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginMaxSize() {
-	test("oneCanCreateAccountLoginMaxSize", 
-		factory.getAccountLoginMaxSize());
+	assertTrue(test("oneCanCreateAccountLoginMaxSize", 
+		factory.getAccountLoginMaxSize()));
     }
 
     @Test(groups = { "positive", "login" })
     public void oneCanCreateAccountLoginFirstSymbolSpace() {
-	test("oneCanCreateAccountLoginFirstSymbolSpace", 
-		factory.getAccountLoginFirstSymbolSpace());
+	assertTrue(test("oneCanCreateAccountLoginFirstSymbolSpace", 
+		factory.getAccountLoginFirstSymbolSpace()));
     }
 
     @Test(groups = { "negative", "password" })
     public void oneCanCreateAccountWithautPass() {
-	test("oneCanCreateAccountWithautPass", 
-		factory.getAccountWithoutPass());
+	assertTrue(test("oneCanCreateAccountWithautPass", 
+		factory.getAccountWithoutPass()));
     }
 
     @Test(groups = { "negative", "password" })
     public void oneCanCreateAccountWithautRepass() {
-	test("oneCanCreateAccountWithautRepass", 
-		factory.getAccountWithoutRepass());
+	assertTrue(test("oneCanCreateAccountWithautRepass", 
+		factory.getAccountWithoutRepass()));
     }
 
-    private void test(String text, Account account) {
+    private boolean test(String text, Account account) {
 	LOG.info("start: " + text);
 	LOG.info(account);
 	boolean result = steps.createNewAccount(account);
 	LOG.info("finish: " + text);
-	assertTrue(result);
+	return result;
     }
 
     @AfterClass(alwaysRun = true)

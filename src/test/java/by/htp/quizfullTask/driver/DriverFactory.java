@@ -20,13 +20,21 @@ public class DriverFactory {
     public static void createDriver(String nameDriverString) {
 	LOG.info("start: 'createDriver'");
 	WebDriverCreator creator = null;
-	ListNameDriver nameDriver;
-	nameDriver = ListNameDriver.getNameDriver(nameDriverString);
+	NameDriver nameDriver;
+	nameDriver = NameDriver.getNameDriver(nameDriverString);
 
 	switch (nameDriver) {
 	case CHROME:
 	    creator = new ChromeCreator();
 	    LOG.info("creator: 'ChromeCreator'");
+	    break;
+	case MOZILLA: 
+	    creator = new MozillaCreator();
+	    LOG.info("creator: 'MozillaCreator'");
+	    break;
+	case IEXPLORER:
+	    creator = new IECreator();
+	    LOG.info("creator: 'IECreator'");
 	    break;
 	}
 
@@ -36,7 +44,7 @@ public class DriverFactory {
     }
 
     public static void close() {
-	driver.close();
+	driver.quit();
 	driver = null;
     }
 

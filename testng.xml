@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Task quizful.net">
-	<test name="test">
+	<test name="Chrome test">
 		<groups>
 		<!-- positive, negative, email, password -->
 			<run>
-				
+				<include name="password"/>
 			</run>
 		</groups>
 		<classes>

@@ -1,13 +1,13 @@
 package by.htp.quizfullTask.driver;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ChromeCreator implements WebDriverCreator {
+public class MozillaCreator implements WebDriverCreator {
 
     @Override
     public WebDriver createDriver() {
-	return new ChromeDriver();
+	return new FirefoxDriver();
     }
 
 }

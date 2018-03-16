@@ -26,15 +26,15 @@ public class DriverFactory {
 	switch (nameDriver) {
 	case CHROME:
 	    creator = new ChromeCreator();
-	    LOG.info("creator: 'ChromeCreator'");
+	    LOG.info("creator: " + nameDriver);
 	    break;
 	case MOZILLA: 
 	    creator = new MozillaCreator();
-	    LOG.info("creator: 'MozillaCreator'");
+	    LOG.info("creator: " + nameDriver);
 	    break;
 	case IEXPLORER:
 	    creator = new IECreator();
-	    LOG.info("creator: 'IECreator'");
+	    LOG.info("creator: " + nameDriver);
 	    break;
 	}
 

@@ -21,7 +21,7 @@ public class QuizfullTest {
     public void setUp() {
 	LOG.info("start: 'setUp'");
 	steps = new Steps();
-	steps.startBrowser("chrome");
+	steps.startBrowser("chrome1");
 	LOG.info("finish: 'setUp'");
     }
 

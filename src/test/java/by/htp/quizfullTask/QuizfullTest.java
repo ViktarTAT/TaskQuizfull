@@ -1,5 +1,6 @@
 package by.htp.quizfullTask;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +22,7 @@ public class QuizfullTest {
     public void setUp() {
 	LOG.info("start: 'setUp'");
 	steps = new Steps();
-	steps.startBrowser("chrome1");
+	steps.startBrowser("chrome");
 	LOG.info("finish: 'setUp'");
     }
 
@@ -62,11 +63,16 @@ public class QuizfullTest {
 
     @Test(groups = { "negative", "password" })
     public void oneCanCreateAccountWithautPass() {
-	assertTrue(test("oneCanCreateAccountWithautPass", 
-		factory.getAccountWithoutPass()));
+    	LOG.info("start: " + "oneCanCreateAccountWithautPass");
+    	Account account = factory.getAccountWithoutPass();
+    	LOG.info(account);
+    	String result = steps.createNewAccountWithError(account);
+    	LOG.info("error: " + result);
+    	LOG.info("finish: " + "oneCanCreateAccountWithautPass");
+	assertEquals(result, "Введите пароль/n Пароли не совпадают/n Неправильное число");
     }
 
-    @Test(groups = { "negative", "password" })
+    @Test(groups = { "negative", "password1" })
     public void oneCanCreateAccountWithautRepass() {
 	assertTrue(test("oneCanCreateAccountWithautRepass", 
 		factory.getAccountWithoutRepass()));

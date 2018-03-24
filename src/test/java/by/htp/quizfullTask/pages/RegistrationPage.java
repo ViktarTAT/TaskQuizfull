@@ -19,6 +19,7 @@ public class RegistrationPage extends BasePage {
     private static final By CHECKBOX_CORPORATE = By.id("corporate");
     private static final By INPUT_CAPTCHA = By.name("registrationForm.captcha");
     private static final By BUTTON_OK = By.name("ok");
+    private static final By DIV_ERRORS = By.xpath("//div[@class = 'errors']");
 
     public RegistrationPage(WebDriver driver) {
 	super(driver);
@@ -37,11 +38,18 @@ public class RegistrationPage extends BasePage {
 	//driver.findElement(INPUT_CAPTCHA).click();
 	driver.findElement(BUTTON_OK).click();
     }
+    
+    public String isReportError() {
+    	String errorText = "";
+    	if(driver.findElement(DIV_ERRORS).isDisplayed())
+    		errorText = driver.findElement(DIV_ERRORS).getText();
+    	return errorText;
+    }
 
     // TODO vremeno
     public boolean isResult() {
 	String res = "Неправильное число";
-	WebElement divErrors = driver.findElement(By.xpath("//div[@class = 'errors']"));
+	WebElement divErrors = driver.findElement(DIV_ERRORS);
 	String result = divErrors.getText();
 	return res.equals(result);
     }

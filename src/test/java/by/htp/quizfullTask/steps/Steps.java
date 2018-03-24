@@ -26,5 +26,12 @@ public class Steps {
 	return page.isResult();
     }
     
+    public String createNewAccountWithError(Account account) {
+    	LOG.info("start: 'createNewAccount'");
+    	RegistrationPage page = new RegistrationPage(driver);
+    	page.createNewAcount(account);
+    	LOG.info("finish: 'createNewAccount'");
+    	return page.isReportError();
+        }
     
 }

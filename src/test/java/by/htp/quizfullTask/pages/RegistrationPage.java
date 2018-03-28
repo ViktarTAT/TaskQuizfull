@@ -23,8 +23,7 @@ public class RegistrationPage extends BasePage {
 
     public RegistrationPage(WebDriver driver) {
 	super(driver);
-	HomePage page = new HomePage(driver);
-	page.openRegistrationPage();
+	driver.get("http://www.quizful.net/LoginAction.registration");
 	LOG.info("open: Registration page " + driver.getCurrentUrl());
     }
 

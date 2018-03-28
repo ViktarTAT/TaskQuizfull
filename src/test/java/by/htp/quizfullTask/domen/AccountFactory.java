@@ -13,7 +13,7 @@ public class AccountFactory {
        return account;
    }
    
-   public Account getAccountEmailWithSpace(){
+   public Account getAccountEmailLastSymbolSpace(){
        init();
        String email = account.getEmail();
        email += " ";
@@ -67,5 +67,40 @@ public class AccountFactory {
        return account;
    }
    
+   public Account getAccountLoginIsLessMinSize() {
+	   init();
+	   account.setLogin("ab");
+	   return account;
+   }
    
+   public Account getAccountLoginIsMoreMaxSize() {
+	   init();
+	   account.setLogin("asdfasdfasdfasdasdfa");
+	   return account;
+   }
+   
+   public Account getAccountLoginWithoutLatinLetters() {
+	   init();
+	   account.setLogin("фывафыва");
+	   return account;
+   }
+   
+   public Account getAccountLoginWithNoLatinLetters() {
+	   init();
+	   account.setLogin("asdfфasdf");
+	   return account;
+   }
+   
+   
+   public Account getAccountLoginFirstSymbolIsNumber() {
+	   init();
+	   account.setLogin("2asdfasdf");
+	   return account;
+   }
+   
+   public Account getAccountLoginFirstSymbolIsUnderscore() {
+	   init();
+	   account.setLogin("_asdfasdf");
+	   return account;
+   }
 }

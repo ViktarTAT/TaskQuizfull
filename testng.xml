@@ -2,11 +2,12 @@
 
 <suite name="Task quizful.net">
 	<test name="Chrome test">
+	<!-- chrome, mozilla, iexplorer -->
+	<parameter name="browser" value="iexplorer"/>
 		<groups>
 		<!-- positive, negative, email, password -->
 			<run>
-				<include name="login"/>
-				<exclude name="positive"/>
+				<include name="email1"/>
 			</run>
 		</groups>
 		<classes>

@@ -3,10 +3,16 @@ package by.htp.quizfullTask;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import org.apache.commons.logging.Log;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import by.htp.quizfullTask.domen.Account;
 import by.htp.quizfullTask.domen.AccountFactory;
@@ -18,15 +24,16 @@ public class QuizfullTest {
 	private Logger LOG = LogManager.getRootLogger();
 	private AccountFactory factory = new AccountFactory();
 
+	@Parameters("browser")
 	@BeforeClass(alwaysRun = true)
-	public void setUp() {
+	public void setUp(String browser) {
 		LOG.info("start: 'setUp'");
 		steps = new Steps();
-		steps.startBrowser("chrome");
+		steps.startBrowser(browser);
 		LOG.info("finish: 'setUp'");
 	}
 
-	@Test(groups = { "positive", "email" })
+	@Test(groups = { "positive", "email1" })
 	public void oneCanCreateAccount() {
 		assertTrue(test("oneCanCreateAccount", factory.getAccount()));
 	}
@@ -99,7 +106,7 @@ public class QuizfullTest {
 		assertEquals(result,
 				"Введен недопустимый логин\n" + "Неправильное число");
 	}
-	
+
 	@Test(groups = { "negative", "login" })
 	public void oneCanCreateAccountLoginWithoutLatinLetters() {
 		String result = testError("oneCanCreateAccountLoginWithoutLatinLetters",
@@ -107,7 +114,7 @@ public class QuizfullTest {
 		assertEquals(result,
 				"Введен недопустимый логин\n" + "Неправильное число");
 	}
-	
+
 	@Test(groups = { "negative", "login" })
 	public void oneCanCreateAccountLoginWithNoLatinLetters() {
 		String result = testError("oneCanCreateAccountLoginWithNoLatinLetters",
@@ -115,7 +122,7 @@ public class QuizfullTest {
 		assertEquals(result,
 				"Введен недопустимый логин\n" + "Неправильное число");
 	}
-	
+
 	@Test(groups = { "negative", "login" })
 	public void oneCanCreateAccountLoginFirstSymbolIsNumber() {
 		String result = testError("oneCanCreateAccountLoginFirstSymbolIsNumber",
@@ -123,10 +130,11 @@ public class QuizfullTest {
 		assertEquals(result,
 				"Введен недопустимый логин\n" + "Неправильное число");
 	}
-	
+
 	@Test(groups = { "negative", "login" })
 	public void oneCanCreateAccountLoginFirstSymbolIsUnderscore() {
-		String result = testError("oneCanCreateAccountLoginFirstSymbolIsUnderscore",
+		String result = testError(
+				"oneCanCreateAccountLoginFirstSymbolIsUnderscore",
 				factory.getAccountLoginFirstSymbolIsUnderscore());
 		assertEquals(result,
 				"Введен недопустимый логин\n" + "Неправильное число");

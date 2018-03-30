@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class HomePage extends BasePage {
 
@@ -15,7 +16,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//ul[@id='user-panel']/li[3]/a")
     private WebElement buttonRegistration;
 
-    public HomePage(WebDriver driver) {
+    public HomePage(EventFiringWebDriver driver) {
 	super(driver);
 	PageFactory.initElements(this.driver, this);
 	driver.get(BASE_URL);

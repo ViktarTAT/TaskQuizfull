@@ -1,12 +1,12 @@
 package by.htp.quizfullTask.pages;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public abstract class BasePage {
 
-    protected WebDriver driver;
+    protected EventFiringWebDriver driver;
     
-    public BasePage(WebDriver driver){
+    public BasePage(EventFiringWebDriver driver){
 	this.driver = driver;
     }
     

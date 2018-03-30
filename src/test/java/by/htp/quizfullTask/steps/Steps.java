@@ -3,18 +3,21 @@ package by.htp.quizfullTask.steps;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import by.htp.quizfullTask.domen.Account;
 import by.htp.quizfullTask.driver.DriverFactory;
+import by.htp.quizfullTask.listener.MyListener;
 import by.htp.quizfullTask.pages.RegistrationPage;
 
 public class Steps {
-    private WebDriver driver;
+    private EventFiringWebDriver driver;
     private static final Logger LOG = LogManager.getRootLogger();
 
     public void startBrowser(String nameDriver) {
 	LOG.info("start: 'startBrowser'");
-	driver = DriverFactory.getInstance(nameDriver);
+	driver = new EventFiringWebDriver(DriverFactory.getInstance(nameDriver));
+	driver.register(new MyListener());
 	LOG.info("finish: 'startBrowser'");
     }
 
